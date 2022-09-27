@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstScreen">
+    <fragment
+        android:id="@+id/firstScreen"
+        android:name="com.ostapenko.android.retrofitpluscoroutines.FirstScreen"
+        android:label="FirstScreen">
+        <action
+            android:id="@+id/action_firstScreen_to_secondScreenFragment"
+            app:destination="@id/secondScreenFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="number"
+            android:defaultValue="0"
+            app:argType="string" />
+        <argument
+            android:name="text"
+            android:defaultValue="Nothing to show"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondScreenFragment"
+        android:name="com.ostapenko.android.retrofitpluscoroutines.SecondScreenFragment"
+        android:label="SecondScreenFragment">
+        <action
+            android:id="@+id/action_secondScreenFragment_to_firstScreen"
+            app:destination="@id/firstScreen"
+            app:popUpTo="@id/firstScreen"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="number"
+            android:defaultValue="0"
+            app:argType="string" />
+        <argument
+            android:name="text"
+            android:defaultValue="Nothing to show"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
